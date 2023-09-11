@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "355355222567",
+    "firebase_url": "https://mydigitalprinting-60323-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mydigitalprinting-60323",
+    "storage_bucket": "mydigitalprinting-60323.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355355222567:android:21294cf53fbb381a5f2402",
+        "android_client_info": {
+          "package_name": "com.example.productsadder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy8W0EtAqMWM97KZkfN6mGnV291KX_YJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355355222567:android:d707ff71c888d56d5f2402",
+        "android_client_info": {
+          "package_name": "umbjm.ft.inf.mydigitalprinting"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355355222567-vmlnk09fats8ppn7a1v2h2roftghipud.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "umbjm.ft.inf.mydigitalprinting",
+            "certificate_hash": "e347117a1d6fc096b892c4079bd29a8b6dc78b81"
+          }
+        },
+        {
+          "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy8W0EtAqMWM97KZkfN6mGnV291KX_YJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355355222567:android:eb485cb1ad36f9125f2402",
+        "android_client_info": {
+          "package_name": "umbjm.ft.inf.produk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBy8W0EtAqMWM97KZkfN6mGnV291KX_YJI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355355222567-hmiem15uilkt469e1b3ifoplk3poa42h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
