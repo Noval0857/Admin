@@ -1,4 +1,4 @@
-package umbjm.ft.inf.produk.idcard
+package umbjm.ft.inf.produk.sertifikat
 
 import android.content.Intent
 import android.net.Uri

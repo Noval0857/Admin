@@ -1,6 +1,6 @@
 package umbjm.ft.inf.produk.sertifikat
 
-class SertifikatItem(
+data class SertifikatItem(
     val idSertifikat: String? = null,
     val nameSertifikat: String? = null,
     val hargaSertifikat: String? = null,

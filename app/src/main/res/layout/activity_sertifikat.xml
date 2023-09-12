@@ -16,13 +16,13 @@
 
     <EditText
         android:id="@+id/nameSertifikat"
-        android:hint="input nama serti"
+        android:hint="input nama sertifikat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
     <EditText
         android:id="@+id/hargaSertifikat"
-        android:hint="input harga serti"
+        android:hint="input harga sertifikat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
