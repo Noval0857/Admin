@@ -60,11 +60,11 @@ class IdcardActivity : AppCompatActivity() {
                             // Simpan URL gambar ke Firebase Realtime Database
                             val imageUrl = uri.toString()
                             database = FirebaseDatabase.getInstance("https://mydigitalprinting-60323-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Products")
-                            val idIdcard = database.push().key!!
-                            val products = IdcardItem(idIdcard, nameIdcard, hargaIdcard, imageUrl)
+                            val idCard = database.push().key!!
+                            val products = IdcardItem(idCard, nameIdcard, hargaIdcard, imageUrl)
 
                             // Menambahkan item banner sebagai child dari id produk
-                            database.child("Idcard").child(idIdcard).setValue(products).addOnCompleteListener { databaseTask ->
+                            database.child("Idcard").child(idCard).setValue(products).addOnCompleteListener { databaseTask ->
                                 if (databaseTask.isSuccessful) {
                                     Toast.makeText(this, "Uploaded Successfully", Toast.LENGTH_SHORT).show()
                                     val intent = Intent(this, MainActivity::class.java)
