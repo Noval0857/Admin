@@ -22,14 +22,13 @@ class ProductsActivity : AppCompatActivity() {
         binding = ActivityProductsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        showP()
         imageInput()
         upload()
+        showP()
     }
-
     private fun showP() {
         binding.showP.setOnClickListener {
-            startActivity(Intent(this, ShowProducts::class.java))
+            startActivity(Intent(this, ShowProduk::class.java))
         }
     }
 

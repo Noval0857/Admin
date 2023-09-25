@@ -9,6 +9,7 @@ import umbjm.ft.inf.produk.databinding.ActivityMainBinding
 import umbjm.ft.inf.produk.idcard.IdcardActivity
 import umbjm.ft.inf.produk.sertifikat.SertifikatActivity
 import umbjm.ft.inf.produk.sticker.StickerActivity
+import umbjm.ft.inf.produk.user.UserActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -41,6 +42,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnSertifikat.setOnClickListener {
             startActivity(Intent(this, SertifikatActivity::class.java))
+        }
+
+        binding.btnUser.setOnClickListener {
+            startActivity(Intent(this, KeranjangActivity::class.java))
+
         }
     }
 }

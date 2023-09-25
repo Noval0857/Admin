@@ -1,8 +1,10 @@
 package umbjm.ft.inf.produk
 
 class KeranjangItem(
-    val id: String?= null,
-    val name: String?= null,
-    val image: String? = ""
+    val idPesanan: String? = null,
+    val namaProject: String?= null,
+    val harga: String? = null,
+    val image: String? = "",
+    val status: String? = null
 
 )

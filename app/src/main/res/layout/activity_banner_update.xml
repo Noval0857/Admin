@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".banner.BannerActivity"
+    tools:context=".banner.BannerUpdate"
     android:orientation="vertical">
 
     <ImageView
@@ -27,15 +27,9 @@
         android:layout_height="wrap_content"/>
 
     <Button
-        android:id="@+id/upload"
-        android:text="upload"
+        android:id="@+id/update"
+        android:text="update"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/show"
-        android:text="show banner"/>
 
 </LinearLayout>

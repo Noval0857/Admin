@@ -13,13 +13,13 @@ import com.google.firebase.storage.FirebaseStorage
 import umbjm.ft.inf.produk.MainActivity
 import umbjm.ft.inf.produk.databinding.ActivityIdcardBinding
 import umbjm.ft.inf.produk.databinding.ActivitySertifikatBinding
+import umbjm.ft.inf.produk.idcard.IdcardProduk
 import umbjm.ft.inf.produk.sertifikat.SertifikatItem
 
 class SertifikatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySertifikatBinding
     private lateinit var database: DatabaseReference
-    lateinit var auth: FirebaseAuth
     private var imageUri: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,6 +29,13 @@ class SertifikatActivity : AppCompatActivity() {
 
         imageInput()
         upload()
+        showP()
+    }
+
+    private fun showP() {
+        binding.showP.setOnClickListener {
+            startActivity(Intent(this, SertifikatProduk::class.java))
+        }
     }
 
 

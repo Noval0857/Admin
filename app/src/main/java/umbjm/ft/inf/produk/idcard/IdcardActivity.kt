@@ -11,6 +11,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import umbjm.ft.inf.produk.MainActivity
+import umbjm.ft.inf.produk.ShowProduk
 import umbjm.ft.inf.produk.databinding.ActivityIdcardBinding
 
 class IdcardActivity : AppCompatActivity() {
@@ -27,6 +28,13 @@ class IdcardActivity : AppCompatActivity() {
 
         imageInput()
         upload()
+        showP()
+    }
+
+    private fun showP() {
+        binding.showP.setOnClickListener {
+            startActivity(Intent(this, IdcardProduk::class.java))
+        }
     }
 
 
@@ -50,7 +58,7 @@ class IdcardActivity : AppCompatActivity() {
             val hargaIdcard = binding.hargaIdcard.text.toString()
 
 
-            val storageRef = FirebaseStorage.getInstance().reference.child("Products").child(System.currentTimeMillis().toString())
+            val storageRef = FirebaseStorage.getInstance().reference.child("Products/Idcard").child(System.currentTimeMillis().toString())
 
             imageUri?.let {
                 storageRef.putFile(it).addOnCompleteListener { task ->

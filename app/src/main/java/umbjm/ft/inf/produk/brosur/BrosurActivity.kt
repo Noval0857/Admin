@@ -13,6 +13,7 @@ import com.google.firebase.storage.FirebaseStorage
 import umbjm.ft.inf.produk.MainActivity
 import umbjm.ft.inf.produk.databinding.ActivityBannerBinding
 import umbjm.ft.inf.produk.databinding.ActivityBrosurBinding
+import umbjm.ft.inf.produk.idcard.IdcardProduk
 
 class BrosurActivity : AppCompatActivity() {
 
@@ -28,8 +29,14 @@ class BrosurActivity : AppCompatActivity() {
 
         imageInput()
         upload()
+        showP()
     }
 
+    private fun showP() {
+        binding.showP.setOnClickListener {
+            startActivity(Intent(this, BrosurProduk::class.java))
+        }
+    }
 
     private fun imageInput() {
         binding.imageBrosur.setOnClickListener {
@@ -51,7 +58,7 @@ class BrosurActivity : AppCompatActivity() {
             val hargaBrosur = binding.hargaBrosur.text.toString()
 
 
-            val storageRef = FirebaseStorage.getInstance().reference.child("Products").child(System.currentTimeMillis().toString())
+            val storageRef = FirebaseStorage.getInstance().reference.child("Products/Brosur").child(System.currentTimeMillis().toString())
 
             imageUri?.let {
                 storageRef.putFile(it).addOnCompleteListener { task ->
@@ -84,39 +91,5 @@ class BrosurActivity : AppCompatActivity() {
                 }
             }
         }
-
-//            val storageRef = FirebaseStorage.getInstance().reference.child("Products").child("Banner").child(System.currentTimeMillis().toString() + ".jpg")
-//
-//
-//            imageUri?.let {
-//                storageRef.putFile(it).addOnCompleteListener { task ->
-//                    if (task.isSuccessful) {
-//                        // Jika pengunggahan berhasil, dapatkan URL gambar
-//                        storageRef.downloadUrl.addOnSuccessListener { uri ->
-//                            // Simpan URL gambar ke Firebase Realtime Database
-//                            val imageUrl = uri.toString()
-//                            database = FirebaseDatabase.getInstance("https://mydigitalprinting-60323-default-rtdb.asia-southeast1.firebasedatabase.app/").getReference("Products/")
-//                            val idBanner = database.push().key!!
-//                            val products = BannerItem(idBanner, nameBanner, hargaBanner, imageUrl)
-//                            database.child(idBanner).setValue(products).addOnCompleteListener { databaseTask ->
-//                                if (databaseTask.isSuccessful) {
-//                                    Toast.makeText(this, "Uploaded Successfully", Toast.LENGTH_SHORT).show()
-//                                    val intent = Intent(this, MainActivity::class.java)
-//                                    startActivity(intent)
-//                                    finish()
-//                                } else {
-//                                    Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show()
-//                                }
-//                                binding.nameBanner.text?.clear()
-//                                binding.hargaBanner.text?.clear()
-//
-//                            }
-//                        }
-//                    } else {
-//                        Toast.makeText(this, "Gagal", Toast.LENGTH_SHORT).show()
-//                    }
-//                }
-//            }
-//        }
     }
 }

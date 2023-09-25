@@ -1,6 +1,6 @@
 package umbjm.ft.inf.produk.idcard
 
-class IdcardItem(
+data class IdcardItem(
     val idCard: String? = null,
     val nameIdcard: String? = null,
     val harga: String? = null,
