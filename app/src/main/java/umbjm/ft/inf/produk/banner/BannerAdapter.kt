@@ -8,6 +8,8 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.Picasso
 import umbjm.ft.inf.produk.R
 import umbjm.ft.inf.produk.idcard.IdcardUpdate
@@ -57,9 +59,30 @@ class BannerAdapter(private val bannerItem: ArrayList<BannerItem>) : RecyclerVie
         }
 
         holder.icDelete.setOnClickListener {
-            // Implementasi aksi yang sesuai di sini
-            // Misalnya, Anda dapat memanggil sebuah fungsi untuk menghapus item.
+            val idBanner = currentitem.idBanner
+            deleteItemFromDatabase(idBanner!!)
         }
+    }
+
+    private fun deleteItemFromDatabase(idBanner: String) {
+        val database = FirebaseDatabase.getInstance("https://mydigitalprinting-60323-default-rtdb.asia-southeast1.firebasedatabase.app/")
+            .getReference("Products/Banner")
+        val itemReference = database.child(idBanner)
+
+        itemReference.removeValue()
+            .addOnSuccessListener {
+                // Item berhasil dihapus dari database
+                // Hapus item dari daftar lokal juga
+                val removedItem = bannerItem.firstOrNull { it.idBanner == idBanner }
+                removedItem?.let {
+                    val position = bannerItem.indexOf(it)
+                    bannerItem.removeAt(position)
+                    notifyItemRemoved(position)
+                }
+            }
+            .addOnFailureListener { e ->
+                // Error handling jika gagal menghapus item
+            }
     }
 
 }

@@ -2,7 +2,6 @@ package umbjm.ft.inf.produk.banner
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -12,8 +11,6 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import umbjm.ft.inf.produk.R
-import umbjm.ft.inf.produk.brosur.BrosurAdapter
-import umbjm.ft.inf.produk.brosur.BrosurItem
 
 class BannerProduk : AppCompatActivity() {
     private lateinit var database: DatabaseReference
@@ -30,7 +27,6 @@ class BannerProduk : AppCompatActivity() {
         bannerItem = arrayListOf<BannerItem>()
         getData()
     }
-
     private fun getData() {
         database = FirebaseDatabase
             .getInstance("https://mydigitalprinting-60323-default-rtdb.asia-southeast1.firebasedatabase.app/")

@@ -16,7 +16,6 @@ class KeranjangActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var keranjangItem: ArrayList<KeranjangItem>
     private lateinit var keranjangAdapter: KeranjangAdapter
-    private val statusOptions = arrayOf("Belum Dibayar", "Dalam Proses", "Selesai")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +25,7 @@ class KeranjangActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.hasFixedSize()
         keranjangItem = arrayListOf<KeranjangItem>()
-        keranjangAdapter = KeranjangAdapter(keranjangItem, statusOptions)
+        keranjangAdapter = KeranjangAdapter(keranjangItem)
         recyclerView.adapter = keranjangAdapter
 
         getData()
@@ -45,7 +44,7 @@ class KeranjangActivity : AppCompatActivity() {
                     val userID = userSnapshot.key // Ini akan berisi userID dari setiap pengguna
                     if (userID != null) {
                         // Dapatkan data pesanan untuk pengguna tertentu
-                        val pesananReference = userSnapshot.child("Pesanan").ref
+                        val pesananReference = userSnapshot.child("Keranjang").ref
                         pesananReference.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(pesananSnapshot: DataSnapshot) {
                                 for (keranjangSnapshot in pesananSnapshot.children) {
